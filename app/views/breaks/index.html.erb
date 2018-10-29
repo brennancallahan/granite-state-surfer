@@ -1,7 +1,10 @@
-<h1>The Granite State Surfer</h1>
+<div class="title">
+<%="The Granite State Surfer"%>
+</div>
+
 
 <% @breaks.each do |each_break| %>
-<ul>
-  <li><%=each_break.name%></li>
-</ul>
+  <div class="breaks">
+    <%="#{each_break.name}"%>
+  </div>
 <% end %>

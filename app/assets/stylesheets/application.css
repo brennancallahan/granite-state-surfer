@@ -15,3 +15,9 @@
  *= require foundation_and_overrides
 
  */
+ body {
+   background-image: url(index_bg.jpg);
+   background-repeat: no-repeat;
+   background-position: right bottom;
+   background-attachment: fixed;
+ }
