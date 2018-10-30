@@ -2,9 +2,8 @@
 <%="The Granite State Surfer"%>
 </div>
 
-
 <% @breaks.each do |each_break| %>
   <div class="breaks">
-    <%="#{each_break.name}"%>
+    <%= link_to each_break.name, each_break %>
   </div>
 <% end %>
