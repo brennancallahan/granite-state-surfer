@@ -29,6 +29,9 @@ const BreakShow = (props) => {
           <p>Maximum Breaking Wave Height: {props.forecast.maxBreakingHeight} ft.</p>
           <p>Minimum Breaking Wave Height: {props.forecast.minBreakingHeight} ft.</p>
           <p>Wind Speed and Direction: {props.forecast.windspeed}mph, {props.forecast.windDirection}</p>
+          <a href="http://magicseaweed.com">
+            <img src="https://im-1-uk.msw.ms/msw_powered_by.png"></img>
+          </a>
       </div>
     </div>
 
