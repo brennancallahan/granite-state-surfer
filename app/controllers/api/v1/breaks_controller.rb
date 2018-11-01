@@ -5,6 +5,14 @@ class Api::V1::BreaksController < ApplicationController
 
   def show
     @break = Break.find(params[:id])
-    render json: @break.to_json
+    forecast_data = Break.retrieve_forecast_data(@break)
+    render json: { break: BreakSerializer.new(@break), forecast_data: forecast_data, current_user: current_user }
   end
 end
+
+
+
+
+
+
+# @break.retrieve_forecast_data

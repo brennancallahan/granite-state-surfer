@@ -2,9 +2,18 @@ Rails.application.routes.draw do
 
   resources :breaks, only: [:index, :show]
 
+
   namespace :api do
     namespace :v1 do
-      resources :breaks, only: [:index, :show]
+      resources :breaks, only: [:index, :show] do
+        resources :posts, only: [:index, :new, :create]
+      end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :posts, only: [:index, :show, :create, :new]
     end
   end
 
