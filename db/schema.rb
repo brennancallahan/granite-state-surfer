@@ -10,20 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_29_191842) do
+ActiveRecord::Schema.define(version: 2018_10_31_142555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "break_groups", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "break_group", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "breaks", force: :cascade do |t|
     t.string "name", null: false
     t.string "beach", null: false
     t.string "address", null: false
+    t.bigint "break_group_id", null: false
     t.boolean "beginner_friendly", null: false
     t.boolean "onsite_parking", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "break_type", null: false
+    t.index ["break_group_id"], name: "index_breaks_on_break_group_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "recommended_conditions", null: false
+    t.string "recommended_surfers", null: false
+    t.string "additional_information"
+    t.string "photo_path"
+    t.bigint "break_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["break_id"], name: "index_posts_on_break_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

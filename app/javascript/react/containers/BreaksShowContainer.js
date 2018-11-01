@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import BreakShow from '../components/BreakShow'
+import PostsShow from '../components/PostsShow'
+import PostsFormContainer from './PostsFormContainer'
 
 class BreakShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      beach: "",
-      address: "",
-      beginner_friendly: "",
-      onsite_parking: "",
-      break_type: ""
+      break: {},
+      break_id: null,
+      forecast_data: {},
+      current_user: {},
+      posts: []
     }
+
   }
 
   componentDidMount() {
@@ -28,21 +30,34 @@ class BreakShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      let fetchedBreak = body
-      this.setState({ name: fetchedBreak.name, beach: fetchedBreak.beach, address: fetchedBreak.address, beginner_friendly: fetchedBreak.beginner_friendly, onsite_parking: fetchedBreak.onsite_parking, break_type: fetchedBreak.break_type })
+      let fetchedBreak = body.break
+      let break_id = body.break.id
+      let fetchedForecast = body.forecast_data
+      let fetchedUser = body.current_user
+      let fetchedPosts = body.break.posts
+      this.setState({ break: fetchedBreak, forecast_data: fetchedForecast, current_user: fetchedUser, posts: fetchedPosts, break_id: break_id  })
     })
   }
 
   render() {
     return (
+  <div>
+    <div>
     <BreakShow
-      name={this.state.name}
-      beach={this.state.beach}
-      address={this.state.address}
-      beginner_friendly={this.state.beginner_friendly}
-      onsite_parking={this.state.onsite_parking}
-      break_type={this.state.break_type}
-      />
+      break={this.state.break}
+      forecast={this.state.forecast_data}
+      user={this.state.current_user}
+      posts={this.state.posts}
+    />
+    <PostsShow
+    posts={this.state.posts}
+    />
+    </div>
+    <PostsFormContainer
+      userId={this.state.current_user}
+      breakId={this.state.break_id}
+    />
+  </div>
   )}
 }
 
