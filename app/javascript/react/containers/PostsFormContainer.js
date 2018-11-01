@@ -25,6 +25,7 @@ class PostsFormContainer extends Component {
     this.handleSurfersChange = this.handleSurfersChange.bind(this);
     this.handleAdditionalInfoChange = this.handleAdditionalInfoChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClearForm = this.handleClearForm.bind(this);
 
 
   }
@@ -70,6 +71,14 @@ class PostsFormContainer extends Component {
     this.setState ({ additional_information: newAdditionalInfo})
   }
 
+  handleClearForm() {
+    this.setState({
+      recommended_conditions: '',
+      recommended_surfers: '',
+      additional_information: ''
+    })
+  };
+
   handleSubmit(event) {
     event.preventDefault();
     if((this.validateConditionsChange(this.state.recommended_conditions)) && (this.validateSurfersChange(this.state.recommended_surfers))) {
@@ -81,6 +90,9 @@ class PostsFormContainer extends Component {
       body.append("uploaded_photo", this.state.file[0])
       body.append("break_id", this.props.breakId)
       body.append("user_id", this.props.userId.id)
+
+      this.props.addNewPost({recommended_conditions: this.state.recommended_conditions, recommended_surfers: this.state.recommended_surfers, additional_information: this.state.additional_information })
+      this.handleClearForm()
 
     fetch(`/api/v1/breaks/${this.props.breakId}/posts`, {
       credentials: 'same-origin',
@@ -106,29 +118,37 @@ class PostsFormContainer extends Component {
     }
   }
   render() {
-    console.log(this.state.recommended_conditions)
-    console.log(this.state.recommended_surfers)
-    console.log(this.state.additional_information)
+    let errorDiv;
+    let errorItems;
+
+    if(Object.keys(this.state.errors).length > 0) {
+      errorItems = Object.values(this.state.errors).map(error => {
+        return(<li key={error}>{error}</li>)
+      })
+      errorDiv = <div className='error'>{errorItems}</div>
+    }
+
     return(
       <div>
+      <h5>{errorDiv}</h5>
         <form onSubmit={this.handleSubmit}>
           <ConditionsField
             content={this.state.recommended_conditions}
-            label="Break Conditions"
+            label="What are the ideal conditions for this spot?"
             name="break-conditions"
             handleChange={this.handleConditionsChange}
             />
 
           <SurfersField
             content={this.state.recommended_surfers}
-            label="Surf Conditions"
+            label="What type of surfer should surf this spot?"
             name="surf-conditions"
             handleChange={this.handleSurfersChange}
             />
 
           <AdditionalInfoField
             content={this.state.additional_information}
-            label="Additional Info"
+            label="Any other important pieces of information surfers should know?"
             name="additional-info"
             handleChange={this.handleAdditionalInfoChange}
             />

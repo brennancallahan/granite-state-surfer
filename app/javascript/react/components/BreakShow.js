@@ -13,8 +13,8 @@ const BreakShow = (props) => {
 
 
   return(
-      <div className="large-6 columns">
-        <div className="breakinformation">
+    <div>
+        <div>
           Spot Information
           <p>Break Name: {props.break.name}</p>
           <p>Beach: {props.break.beach}</p>
@@ -22,8 +22,7 @@ const BreakShow = (props) => {
           <p>Difficulty: {beginnerStatus}</p>
         </div>
 
-
-        <div className="mswdata">
+        <div className="conditions">
           Current Conditions:
           <p>Overall Rating: {props.forecast.solidRating}/5</p>
           <p>Maximum Breaking Wave Height: {props.forecast.maxBreakingHeight} ft.</p>
@@ -32,9 +31,8 @@ const BreakShow = (props) => {
           <a href="http://magicseaweed.com">
             <img src="https://im-1-uk.msw.ms/msw_powered_by.png"></img>
           </a>
+        </div>
       </div>
-    </div>
-
   )
 }
 
