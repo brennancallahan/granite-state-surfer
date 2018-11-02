@@ -1,4 +1,5 @@
 class Api::V1::BreaksController < ApplicationController
+
   def index
     render json: Break.all
   end
