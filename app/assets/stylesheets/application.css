@@ -21,3 +21,32 @@
    background-position: right center;
    background-attachment: fixed;
  }
+
+
+.flash-notice {
+  /* width:150px;
+  height: 90px; */
+  background-color: #a8c9ff;
+  -webkit-animation: fadeinout 3s linear forwards;
+  animation: fadeinout 3s linear forwards;
+  opacity: 0;
+  font-style: italic;
+  padding: 15px;
+}
+
+ .flash-alert {
+   background-color: #a8c9ff;
+   -webkit-animation: fadeinout 5s linear forwards;
+   animation: fadeinout 5s linear forwards;
+   opacity: 0;
+   font-style: italic;
+   padding: 15px;
+ }
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
+}

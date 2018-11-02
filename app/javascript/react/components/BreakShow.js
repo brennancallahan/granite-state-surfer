@@ -15,15 +15,15 @@ const BreakShow = (props) => {
   return(
     <div>
         <div>
-          Spot Information
-          <p>Break Name: {props.break.name}</p>
+          <div className="spotlocation">Spot Information</div>
+          <div className="breakname">{props.break.name}</div>
           <p>Beach: {props.break.beach}</p>
           <p>Address: {props.break.address}</p>
           <p>Difficulty: {beginnerStatus}</p>
         </div>
 
         <div className="conditions">
-          Current Conditions:
+          <div className="spotlocation">Current Conditions:</div>
           <p>Overall Rating: {props.forecast.solidRating}/5</p>
           <p>Maximum Breaking Wave Height: {props.forecast.maxBreakingHeight} ft.</p>
           <p>Minimum Breaking Wave Height: {props.forecast.minBreakingHeight} ft.</p>

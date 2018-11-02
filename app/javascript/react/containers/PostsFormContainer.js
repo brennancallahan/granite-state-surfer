@@ -27,7 +27,6 @@ class PostsFormContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
 
-
   }
 
   validateConditionsChange(input) {
