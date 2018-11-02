@@ -15,6 +15,7 @@ class BreakShowContainer extends Component {
     }
     this.addNewPost = this.addNewPost.bind(this);
   }
+
   addNewPost(postPayload) {
     let newPosts = this.state.posts.concat(postPayload)
     this.setState({ posts: newPosts})
@@ -39,15 +40,16 @@ class BreakShowContainer extends Component {
       let fetchedForecast = body.forecast_data
       let fetchedUser = body.current_user
       let fetchedPosts = body.break.posts
-      this.setState({ break: fetchedBreak, forecast_data: fetchedForecast, current_user: fetchedUser, posts: fetchedPosts, break_id: break_id  })
+      this.setState({ break: fetchedBreak, forecast_data: fetchedForecast, current_user: fetchedUser, posts: fetchedPosts, break_id: break_id })
     })
   }
 
   render() {
+    debugger;
     return (
   <div className="row">
 
-    <div className="large-6 columns">
+    <div className="large-8 columns">
       <div className="breakshow">
         <BreakShow
           break={this.state.break}
@@ -58,7 +60,7 @@ class BreakShowContainer extends Component {
       </div>
     </div>
 
-    <div className="large-6 columns">
+    <div className="large-8 columns">
       <div className = "formshow">
         <PostsFormContainer
           userId={this.state.current_user}
@@ -68,7 +70,7 @@ class BreakShowContainer extends Component {
       </div>
     </div>
 
-    <div className="large-6 columns">
+    <div className="large-8 columns">
       <div className = "postshow">
         <PostsShow
         posts={this.state.posts}

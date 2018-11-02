@@ -5,6 +5,8 @@ import { browserHistory } from 'react-router'
 import ConditionsField from '../components/ConditionsField'
 import SurfersField from '../components/SurfersField'
 import AdditionalInfoField from '../components/AdditionalInfoField'
+import Dropzone from 'react-dropzone';
+import swal from 'sweetalert';
 
 
 class PostsFormContainer extends Component {
@@ -26,6 +28,7 @@ class PostsFormContainer extends Component {
     this.handleAdditionalInfoChange = this.handleAdditionalInfoChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
+    this.onDrop = this.onDrop.bind(this);
 
   }
 
@@ -74,7 +77,8 @@ class PostsFormContainer extends Component {
     this.setState({
       recommended_conditions: '',
       recommended_surfers: '',
-      additional_information: ''
+      additional_information: '',
+      file: []
     })
   };
 
@@ -86,12 +90,10 @@ class PostsFormContainer extends Component {
       body.append("recommended_conditions", this.state.recommended_conditions)
       body.append("recommended_surfers", this.state.recommended_surfers)
       body.append("additional_information", this.state.additional_information)
-      body.append("uploaded_photo", this.state.file[0])
+      body.append("photo_path", this.state.file[0])
       body.append("break_id", this.props.breakId)
       body.append("user_id", this.props.userId.id)
-
-      this.props.addNewPost({recommended_conditions: this.state.recommended_conditions, recommended_surfers: this.state.recommended_surfers, additional_information: this.state.additional_information })
-      this.handleClearForm()
+      body.append("username", this.props.userId.username)
 
     fetch(`/api/v1/breaks/${this.props.breakId}/posts`, {
       credentials: 'same-origin',
@@ -112,10 +114,25 @@ class PostsFormContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
+      this.props.addNewPost(body.post)
+      swal(
+        "Your post was added succcessfully.",
+        "Thank you for contributing.",
+        "success");
+      this.handleClearForm()
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
   }
+
+    onDrop(file) {
+    if(file.length == 1) {
+      this.setState({ file: file })
+    } else {
+      this.setState({ message: 'You can only upload one photo per post.'})
+    }
+  }
+
   render() {
     let errorDiv;
     let errorItems;
@@ -151,6 +168,25 @@ class PostsFormContainer extends Component {
             name="additional-info"
             handleChange={this.handleAdditionalInfoChange}
             />
+
+            <section>
+              <div className="dropzone">
+              <p>Add a photo from your trip to this break:</p>
+                <Dropzone onDrop={this.onDrop}>
+                  <p>Drag your photo here, or click to select a photo to upload.</p>
+                </Dropzone>
+            </div>
+
+            <aside>
+              <p>Selected Photos:</p>
+              <ul>
+                {
+                  this.state.file.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+                }
+              </ul>
+            </aside>
+          </section>
+
           <div className="button-group">
             <input className="button" type="submit" value="Submit" />
           </div>

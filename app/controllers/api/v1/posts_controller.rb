@@ -33,6 +33,6 @@ class Api::V1::PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:recommended_conditions, :recommended_surfers, :additional_information, :photo_path, :break_id, :user_id)
+    params.permit(:recommended_conditions, :recommended_surfers, :additional_information, :photo_path, :break_id, :user_id, :username, :created_at)
   end
 end
