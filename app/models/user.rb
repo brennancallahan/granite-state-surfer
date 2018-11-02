@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+
+  mount_uploader :profile_photo, ProfilePhotoUploader
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -9,5 +12,7 @@ class User < ApplicationRecord
    # validates :last_name, presence: true
    validates :email, presence: true
    validates :encrypted_password, presence: true
+
+   has_many :posts
 
 end

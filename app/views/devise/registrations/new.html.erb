@@ -42,6 +42,10 @@
       <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
     </div>
 
+    <%= f.label :profile_photo, 'Upload a profile photo:' %>
+    <%= f.file_field :profile_photo %>
+
+
     <div class="actions">
       <%= f.submit "Sign up" %>
     </div>

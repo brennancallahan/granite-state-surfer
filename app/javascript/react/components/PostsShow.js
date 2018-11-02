@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import PostTile from './PostTile'
 
 const PostsShow = (props) => {
-
   let posts = props.posts.map(post => {
     return(
       <PostTile
@@ -12,6 +11,9 @@ const PostsShow = (props) => {
       recommended_conditions={post.recommended_conditions}
       recommended_surfers={post.recommended_surfers}
       additional_information={post.additional_information}
+      photo_path={post.photo_path}
+      user={post.username}
+      posted_date={post.created_at}
       />
     )
   })
