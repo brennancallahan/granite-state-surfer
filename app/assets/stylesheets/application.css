@@ -50,3 +50,5 @@
 @keyframes fadeinout {
   50% { opacity: 1; }
 }
+
+@import "react-alice-carousel/lib/alice-carousel.css";
