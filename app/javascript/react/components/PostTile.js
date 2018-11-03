@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 
 const PostTile= (props) => {
   let date = new Date(props.posted_date).toDateString()
-  console.log(date)
   return(
   <div>
     <div className="post">
@@ -16,6 +15,8 @@ const PostTile= (props) => {
       <p>{props.additional_information}</p>
       <div className="postquestion">Attatchments:</div>
       <img src={props.photo_path.url} />
+      <button onClick={() =>
+      props.handlePostDelete(props.id)}>Delete</button>
     </div>
   </div>
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import BreakShow from '../components/BreakShow'
 import PostsShow from '../components/PostsShow'
 import PostsFormContainer from './PostsFormContainer'
+import PhotoShow from '../components/PhotoShow'
 
 class BreakShowContainer extends Component {
   constructor(props) {
@@ -14,11 +15,36 @@ class BreakShowContainer extends Component {
       posts: []
     }
     this.addNewPost = this.addNewPost.bind(this);
+    this.handlePostDelete = this.handlePostDelete.bind(this)
+    this.deletePost = this.deletePost.bind(this)
   }
 
   addNewPost(postPayload) {
     let newPosts = this.state.posts.concat(postPayload)
     this.setState({ posts: newPosts})
+  }
+
+  handlePostDelete(id){
+    fetch(`/api/v1/breaks/${this.props.params.id}/posts/${id}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json'},
+          credentials: 'same-origin'
+      }).then((response) => {
+        this.deletePost(id)
+        swal(
+          "Post Removed",
+          "You removed your post from the page.",
+          "info");
+      })
+  }
+
+  deletePost(id){
+    let updatedPosts = this.state.posts.filter((post) => post.id !== id)
+    this.setState({
+      posts: updatedPosts
+    })
   }
 
   componentDidMount() {
@@ -45,7 +71,6 @@ class BreakShowContainer extends Component {
   }
 
   render() {
-    debugger;
     return (
   <div className="row">
 
@@ -74,10 +99,18 @@ class BreakShowContainer extends Component {
       <div className = "postshow">
         <PostsShow
         posts={this.state.posts}
+        handlePostDelete={this.handlePostDelete}
         />
       </div>
     </div>
 
+    <div className="large-8 columns">
+      <div className = "photoshow">
+        <PhotoShow
+        photos={this.state.posts}
+        />
+      </div>
+    </div>
   </div>
   )}
 }

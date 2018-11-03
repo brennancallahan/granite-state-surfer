@@ -14,16 +14,20 @@ const PostsShow = (props) => {
       photo_path={post.photo_path}
       user={post.username}
       posted_date={post.created_at}
+      handlePostDelete={props.handlePostDelete}
       />
     )
   })
 
-
+  let postCatch
+  if(posts.length == 0) {
+    postCatch = "There aren't any posts about this break yet. If you've been to this break, make a post to inform other surfers!"
+  }
   return(
       <div className="postsshow">
-      {posts}
-    </div>
-
+        {postCatch}
+        {posts}
+      </div>
   )
 }
 

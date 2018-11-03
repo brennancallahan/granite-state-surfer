@@ -41,6 +41,7 @@ class PostShowContainer extends Component {
       )
     })
     return(
+
       <div className="posts">
         {posts}
       </div>
