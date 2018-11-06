@@ -1,11 +1,11 @@
-<h2>Become a Registered Granite State Surfer</h2>
-<%= render "devise/shared/links" %>
+<div class="registrationheader">Become a Registered Granite State Surfer</div>
+<div class="login">Already Registered?<%= render "devise/shared/links" %></div><br/>
 
-
+<div class="register">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-<div class="small-8 columns">
+<div class="small-12 columns">
 
   <div class="registrationform">
 
@@ -51,5 +51,6 @@
     </div>
 
   </div>
+</div>
 </div>
 <% end %>

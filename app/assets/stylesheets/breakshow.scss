@@ -1,7 +1,7 @@
 .showpagetitle {
   display: block;
   text-align: center;
-  border: 5px solid black;
+  border: 2px solid black;
   margin: 10px;
   padding: 20px;
   font-size: 48px;
@@ -13,29 +13,35 @@
   font-stretch: expanded;
 }
 
+.maps {
+  border: 2px solid black;
+  max-width: 100%;
+  max-height: 100%;
+  text-align: center
+}
+
 .breakshow {
   display: block;
   text-align: left;
-  border: 3px solid black;
+  // border: 3px solid black;
   margin: 5px;
   padding: 5px;
   background-color: white;
   font-family: 'Lora', serif;
-
 }
 
 .conditions {
-  border: 3px solid black;
+  // border: 1px solid black;
   margin: 5px;
   padding: 5px;
   background-color: white;
   font-family: 'Lora', serif;
-  text-align: center;
+  text-align: left;
 }
 
 .postshow {
   max-height: 500px;
-  border: 3px solid black;
+  // border: 3px solid black;
   margin: 5px;
   padding: 5px;
   background-color: white;
@@ -47,12 +53,11 @@
 
 .formshow {
   text-align: left;
-  border: 3px solid black;
+  // border: 3px solid black;
   margin: 5px;
   padding: 5px;
   background-color: white;
   font-family: 'Lora', serif;
-
 }
 
 .postquestion {
@@ -61,7 +66,6 @@
   padding: 3px;
   text-decoration: underline;
   font-family: 'Lora', serif;
-
 }
 
 .spotlocation {
@@ -72,6 +76,16 @@
   text-decoration: underline;
   padding-bottom: 5px;
   font-family: 'Lora', serif;
+}
+
+.overallrating {
+  text-align: center;
+  font-size: 20px;
+  margin: 10px auto;
+  padding: 2px;
+  width: 50%;
+  border: 2px solid black;
+  background-color: #CCE9FE
 }
 
 .staticspotdata {
@@ -92,9 +106,9 @@
 }
 
 .column.side {
-  width: 50%;
+  width: 60%;
 }
 
 .column.middle {
-  width: 50%
+  width: 40%
 }
