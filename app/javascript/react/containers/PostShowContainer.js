@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PostShow from '../components/PostShow'
 
 class PostShowContainer extends Component {
   constructor(props) {
