@@ -2,8 +2,13 @@ import React from 'react';
 import { Link } from 'react-router';
 import GalleryShow from './GalleryShow'
 
+
 const PhotoShow = (props) => {
+  let url = []
   let postPhotos = props.photos.map(photo => {
+    if(photo.photo_path.url !== null) {
+      url.push(photo.photo_path)
+    }
     return(
       <GalleryShow
       key={photo.id}
@@ -12,6 +17,7 @@ const PhotoShow = (props) => {
     )
   })
 
+  console.log(url)
 
   return(
       <div className="photosshow">

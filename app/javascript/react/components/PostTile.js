@@ -3,6 +3,20 @@ import { Link } from 'react-router';
 
 const PostTile= (props) => {
   let date = new Date(props.posted_date).toDateString()
+  let deleteButton
+  let attachmentCatch
+
+  if(props.currentUser.id == props.postUserId) {
+    deleteButton = <button onClick={() => props.handlePostDelete(props.id)}>Delete</button>
+  }
+
+  if(props.photo_path.url) {
+    attachmentCatch = <img src={props.photo_path.url} />
+  } else {
+    attachmentCatch = "No attachments"
+  }
+
+
   return(
   <div>
     <div className="post">
@@ -14,9 +28,8 @@ const PostTile= (props) => {
       <div className="postquestion">Anything else surfers should know?</div>
       <p>{props.additional_information}</p>
       <div className="postquestion">Attatchments:</div>
-      <img src={props.photo_path.url} />
-      <button onClick={() =>
-      props.handlePostDelete(props.id)}>Delete</button>
+      {attachmentCatch}<br/><br/>
+      {deleteButton}
     </div>
   </div>
 

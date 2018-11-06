@@ -22,6 +22,12 @@
    background-attachment: fixed;
  }
 
+ /* .top-bar {
+   background-image: url(nav_bar.jpeg);
+   background-repeat: no-repeat;
+   background-attachment: no-repeat;
+ } */
+
 
 .flash-notice {
   /* width:150px;

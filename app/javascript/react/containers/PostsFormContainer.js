@@ -147,7 +147,11 @@ class PostsFormContainer extends Component {
     return(
       <div>
       <h5>{errorDiv}</h5>
+      <div className='formtitle'>
+        Contribute additional information about this spot.
+        </div>
         <form onSubmit={this.handleSubmit}>
+        <div className='form'>
           <ConditionsField
             content={this.state.recommended_conditions}
             label="What are the ideal conditions for this spot?"
@@ -171,9 +175,9 @@ class PostsFormContainer extends Component {
 
             <section>
               <div className="dropzone">
-              <p>Add a photo from your trip to this break:</p>
+              Add a photo from your trip to this break:
                 <Dropzone onDrop={this.onDrop}>
-                  <p>Drag your photo here, or click to select a photo to upload.</p>
+                  Drag your photo here, or click to select a photo to upload.
                 </Dropzone>
             </div>
 
@@ -190,6 +194,7 @@ class PostsFormContainer extends Component {
           <div className="button-group">
             <input className="button" type="submit" value="Submit" />
           </div>
+        </div>
     </form>
   </div>
   )

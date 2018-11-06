@@ -72,46 +72,48 @@ class BreakShowContainer extends Component {
 
   render() {
     return (
-  <div className="row">
-
-    <div className="large-8 columns">
+    <div>
+    <div className="large-12 columns">
+      <div className="showpagetitle">
+        {this.state.break.name}
+      </div>
+    <div className="column middle">
       <div className="breakshow">
         <BreakShow
-          break={this.state.break}
-          forecast={this.state.forecast_data}
-          user={this.state.current_user}
-          posts={this.state.posts}
+              break={this.state.break}
+              forecast={this.state.forecast_data}
+              user={this.state.current_user}
+              posts={this.state.posts}
         />
       </div>
     </div>
 
-    <div className="large-8 columns">
-      <div className = "formshow">
-        <PostsFormContainer
+    <div className="column side">
+    <div className = "formshow">
+      <PostsFormContainer
           userId={this.state.current_user}
           breakId={this.state.break_id}
           addNewPost={this.addNewPost}
-        />
-      </div>
+      />
     </div>
 
-    <div className="large-8 columns">
       <div className = "postshow">
         <PostsShow
-        posts={this.state.posts}
-        handlePostDelete={this.handlePostDelete}
+            posts={this.state.posts}
+            handlePostDelete={this.handlePostDelete}
+            currentUser={this.state.current_user}
         />
       </div>
-    </div>
 
-    <div className="large-8 columns">
       <div className = "photoshow">
         <PhotoShow
-        photos={this.state.posts}
+          photos={this.state.posts}
         />
       </div>
     </div>
   </div>
+  </div>
+
   )}
 }
 

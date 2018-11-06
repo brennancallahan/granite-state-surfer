@@ -12,12 +12,16 @@ class ForecastData
 
     forecast_data = response[0]
     new_hash = {
+      timestamp: forecast_data["localTimestamp"],
       solidRating: forecast_data["solidRating"],
       fadedRating: forecast_data["fadedRating"],
       minBreakingHeight: forecast_data["swell"]["minBreakingHeight"],
       maxBreakingHeight: forecast_data["swell"]["maxBreakingHeight"],
       windspeed: forecast_data["wind"]["speed"],
-      windDirection: forecast_data["wind"]["compassDirection"]
+      windDirection: forecast_data["wind"]["compassDirection"],
+      temperature: forecast_data["condition"]["temperature"],
+      swellChart: forecast_data["charts"]["swell"],
+      windChart: forecast_data["charts"]["wind"]
     }
   end
 end
