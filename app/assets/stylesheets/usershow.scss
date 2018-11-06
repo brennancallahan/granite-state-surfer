@@ -1,0 +1,27 @@
+.userprofile {
+    border: 3px solid black;
+    margin: 5px;
+    padding: 8px;
+    background-color: white;
+}
+
+img {
+  max-width: 50%;
+  height: auto
+}
+
+.userprofiletitle {
+  font-weight: bold;
+}
+
+.userposts {
+  border: 3px solid black;
+  margin: 5px;
+  padding: 8px;
+  background-color: white;
+}
+
+.userpost {
+  max-height: 350px;
+  overflow: scroll
+}

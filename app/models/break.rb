@@ -11,9 +11,11 @@ class Break < ApplicationRecord
 
   def self.retrieve_forecast_data(break_spot)
     @forecast_data = {}
+    # @shop_data = {}
     break_group = break_spot.break_group.id
     if break_group
       @forecast_data = ForecastData.find(break_group)
+      # @shop_data = ShopForecast.find(break_group)
     end
   end
 end

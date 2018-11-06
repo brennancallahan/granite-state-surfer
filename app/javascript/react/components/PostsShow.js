@@ -13,8 +13,10 @@ const PostsShow = (props) => {
       additional_information={post.additional_information}
       photo_path={post.photo_path}
       user={post.username}
+      postUserId={post.user_id}
       posted_date={post.created_at}
       handlePostDelete={props.handlePostDelete}
+      currentUser={props.currentUser}
       />
     )
   })
@@ -25,6 +27,7 @@ const PostsShow = (props) => {
   }
   return(
       <div className="postsshow">
+        <div className="postsheader">Posts from Other Surfers</div>
         {postCatch}
         {posts}
       </div>

@@ -1,6 +1,38 @@
-.postform {
-  border: 3px solid black;
-  margin: 5px;
+.formtitle {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form {
+  padding: 15px;
+}
+
+.dropzone{
+  padding: 10px;
+  font-size: 16px;
+}
+
+.login {
+  font-size: 36px;
+  text-decoration: underline;
+  text-align: center;
+  font-family: 'Lora', serif;
+
+}
+
+.field {
+  font-family: 'Lora', serif;
+  color: black;
+
+}
+
+
+.loginform {
+  font-family: 'Lora', serif;
+  font-size: 16px;
   padding: 5px;
-  background-color: white;
+  margin: 5px;
+  width: 50%;
 }

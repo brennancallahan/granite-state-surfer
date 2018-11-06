@@ -23,6 +23,8 @@ class Api::V1::PostsController < ApplicationController
       render json: { error: 'You must be logged in to post!' }, status: :unprocessable_entity
     end
 
+    binding.pry
+
     if post.save
       render json: { post: post}, adapter: :json
     else
@@ -32,7 +34,11 @@ class Api::V1::PostsController < ApplicationController
 
   def destroy
     post = Post.find(params[:id])
-    post.destroy
+    if current_user.id == post.user_id
+      post.destroy
+    else
+      render json: { error: post.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   private
