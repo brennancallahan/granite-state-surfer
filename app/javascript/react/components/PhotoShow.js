@@ -6,27 +6,22 @@ import Gallery from 'react-photo-gallery'
 
 const PhotoShow = (props) => {
   let imagePaths = []
-  let postPhotos = props.photos.map(photo => {
+  props.photos.forEach(photo => {
     if(photo.photo_path.url !== null) {
       imagePaths.push(photo.photo_path)
     }
-
-    console.log(imagePaths)
-
-    return(
-      <GalleryShow
-      key={photo.id}
-      photo_url={photo.photo_path}
-      />
-    )
   })
+  let galleryObjects = imagePaths.map((image) => {
+    return ({
+        src: image.url, width: 3, height: 4
+      })
+  })
+
 
   return(
       <div className="photosshow">
-        {postPhotos}
+        <Gallery photos={galleryObjects} />
       </div>
-
-
   )
 }
 
