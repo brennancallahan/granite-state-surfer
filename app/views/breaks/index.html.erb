@@ -3,16 +3,14 @@
   </div>
 
 <div class="alpha60">
-  <div><%="The Granite State Surfer is your guide to surfing along the seacoast of New Hampshire. Use this site
+  <div><%="Your guide to surfing along the seacoast of New Hampshire. Use this site
   to find up to date forecast conditions for each break, informative posts and insights from local surfers, and
-  photos posted by users. This is a community driven site; in order to explore further, you'll have to log in or register.
-  If you go to a break, try to make sure you post here with information that others can use to plan their surf trip."%></div><br/>
-
-  <%="To get started, select one of New Hampshire's breaks below. "%>
+  photos posted by users."%>
+  </div>
 </div>
 
 <% @breaks.each do |each_break| %>
   <div class="breaks">
-    <%= link_to each_break.name, each_break, method: :get %>
+    <%= link_to each_break.name, each_break, method: :get, class: 'breakslist' %>
   </div>
 <% end %>

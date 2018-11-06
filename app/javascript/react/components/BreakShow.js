@@ -18,21 +18,25 @@ const BreakShow = (props) => {
     <div>
         <div className="staticspotdata">
           <div className="spotlocation">Spot Information</div>
-          Beach: {props.break.beach} <br/><br/>
-          Address: {props.break.address} <br/><br/>
+          Beach: {props.break.beach} <br/>
+          Address: {props.break.address} <br/>
           Difficulty: {beginnerStatus}<br/><br/>
           <BackButton />
         </div>
 
         <div className="conditions">
           <div className="spotlocation">Current Swell Conditions for {props.break.name}:</div>
-          <p>Overall Rating: {props.forecast.solidRating}/5</p>
-          <p>Maximum Breaking Wave Height: {props.forecast.maxBreakingHeight} ft.</p>
-          <p>Minimum Breaking Wave Height: {props.forecast.minBreakingHeight} ft.</p>
+          <div className="overallrating">Overall Rating: {props.forecast.solidRating}/5</div>
+
+          <div className="waveconditions">
+          Maximum Breaking Wave Height: {props.forecast.maxBreakingHeight} ft.<br/>
+          Minimum Breaking Wave Height: {props.forecast.minBreakingHeight} ft.<br/>
+          </div>
+
           <p>Wind Speed and Direction: {props.forecast.windspeed}mph, {props.forecast.windDirection}</p>
           <p>Current Air Temperature: {props.forecast.temperature} degrees F</p>
-          <p>Current Swell Map:</p><img src={props.forecast.swellChart}></img><br/>
-          <p>Current Wind Map:</p><img src={props.forecast.windChart}></img><br/><br/>
+          Current Swell Map:<br/><img src={props.forecast.swellChart} className="maps"></img><br/>
+          Current Wind Map:<br/><img src={props.forecast.windChart} className="maps"></img><br/><br/>
           <a href="http://magicseaweed.com">
             <img src="https://im-1-uk.msw.ms/msw_powered_by.png"></img>
           </a>
