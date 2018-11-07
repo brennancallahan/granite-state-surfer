@@ -29,6 +29,7 @@
    background-attachment: no-repeat;
    font-family: 'Open Sans', sans-serif;
    background-color: #042E60;
+   opacity: .85;
  }
 
  ul.right {
@@ -44,7 +45,8 @@
 .flash-notice {
   position: fixed;
   z-index: 1;
-  background-color: #042E60;
+  opacity: .85;
+  background-color: #65BF77;
   color: white;
   -webkit-animation: fadeinout 3s linear forwards;
   animation: fadeinout 3s linear forwards;
@@ -56,10 +58,11 @@
  .flash-alert {
    position: fixed;
    z-index: 1;
-   background-color: #042E60;
+   opacity: .85;
+   background-color: #FB5353;
    color: white;
-   -webkit-animation: fadeinout 5s linear forwards;
-   animation: fadeinout 5s linear forwards;
+   -webkit-animation: fadeinout 3s linear forwards;
+   animation: fadeinout 3s linear forwards;
    opacity: 0;
    font-style: italic;
    padding: 15px;

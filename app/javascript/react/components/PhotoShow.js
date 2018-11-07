@@ -20,9 +20,10 @@ const PhotoShow = (props) => {
 
   return(
       <div className="photosshow">
-        <Gallery photos={galleryObjects} />
+
       </div>
   )
 }
 
 export default PhotoShow
+        // <Gallery photos={galleryObjects} /> line 23

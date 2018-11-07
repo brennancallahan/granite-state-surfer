@@ -6,7 +6,7 @@
   text-decoration: underline;
   font-family: 'Open Sans', sans-serif;
   padding: 25px;
-
+  margin-bottom: 50px;
 }
 
 .breaks {
@@ -14,11 +14,11 @@
   display: inline-block;
   font-size: 24px;
   text-align: center;
-  border: 3px solid black;
-  margin: 40px 30px;
-  width: 300px;
+  margin: 30px 30px;
+  width: 80%;
   padding: 10px;
   background-color: #042E60;
+  opacity: .8;
   font-family: 'Open Sans', sans-serif;
   -o-transition:.5s;
   -ms-transition:.5s;
@@ -27,16 +27,20 @@
   transition:.5s;
 }
 
+a.breakslist:hover {
+  color: white;
+}
+
 .breaks:hover {
   color: white;
   display: inline-block;
   font-size: 24px;
   text-align: center;
-  border: 3px solid black;
-  margin: 40px 30px;
-  width: 300px;
+  margin: 30px 30px;
+  width: 80%;
   padding: 10px;
-  background-color: #0051b1;
+  background-color: #042E60;
+  opacity: 1;
   font-family: 'Open Sans', sans-serif;
   -o-transition:.5s;
   -ms-transition:.5s;
@@ -49,7 +53,7 @@
   width: 50%;
   margin: 30px auto;
   font-size: 22px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 35px;
   font-family: 'Open Sans', sans-serif;
 }
