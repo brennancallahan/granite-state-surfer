@@ -35,8 +35,8 @@ const BreakShow = (props) => {
 
           <p>Wind Speed and Direction: {props.forecast.windspeed}mph, {props.forecast.windDirection}</p>
           <p>Current Air Temperature: {props.forecast.temperature} degrees F</p>
-          Current Swell Map:<br/><img src={props.forecast.swellChart} className="maps"></img><br/>
-          Current Wind Map:<br/><img src={props.forecast.windChart} className="maps"></img><br/><br/>
+          <div className="charttext">Current Swell Map:</div><img src={props.forecast.swellChart} className="maps"></img><br/>
+          <div className="charttext">Current Wind Map:</div><img src={props.forecast.windChart} className="maps"></img><br/><br/>
           <a href="http://magicseaweed.com">
             <img src="https://im-1-uk.msw.ms/msw_powered_by.png"></img>
           </a>
