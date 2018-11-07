@@ -13,7 +13,7 @@ const PhotoShow = (props) => {
   })
   let galleryObjects = imagePaths.map((image) => {
     return ({
-        src: image.url, width: 3, height: 4
+        src: image.url, width: 3, height: 3
       })
   })
 

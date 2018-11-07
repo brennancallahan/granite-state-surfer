@@ -10,16 +10,22 @@
   text-align: center;
 }
 
-button {
+.simplebutton {
   background-color: #042E60;
   padding: 10px;
   font-size: 14px;
+  color: white;
 }
 
-button:hover {
+button.simplebutton {
+  margin: 0px;
+}
+
+.simplebutton:hover {
   background-color: #0051b1;
   padding: 10px;
   font-size: 14px;
+  color: white;
 }
 
 .button {
@@ -32,4 +38,12 @@ button:hover {
     background-color: #0051b1;
     padding: 10px;
     font-size: 14px;
+}
+
+button {
+  background-color: #042E60;
+}
+
+button:hover {
+  background-color: #0051b1;
 }

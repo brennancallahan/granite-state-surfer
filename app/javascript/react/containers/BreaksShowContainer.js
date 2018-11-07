@@ -73,10 +73,10 @@ class BreakShowContainer extends Component {
   render() {
     return (
     <div>
-    <div className="large-12 columns">
-      <div className="showpagetitle">
+      <div className="alpha50">
         {this.state.break.name}
       </div>
+    <div className="large-12 columns">
     <div className="column middle">
       <div className="breakshow">
         <BreakShow
@@ -95,7 +95,7 @@ class BreakShowContainer extends Component {
           breakId={this.state.break_id}
           addNewPost={this.addNewPost}
       />
-    </div>
+    </div><br/>
 
       <div className = "postshow">
         <PostsShow

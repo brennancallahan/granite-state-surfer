@@ -1,16 +1,23 @@
+<div className="row">
   <div class="title">
   <%="The Granite State Surfer"%>
   </div>
-
-<div class="alpha60">
-  <div><%="Your guide to surfing along the seacoast of New Hampshire. Use this site
-  to find up to date forecast conditions for each break, informative posts and insights from local surfers, and
-  photos posted by users."%>
-  </div>
 </div>
 
-<% @breaks.each do |each_break| %>
-  <div class="breaks">
-    <%= link_to each_break.name, each_break, method: :get, class: 'breakslist' %>
+<div className="row">
+  <div class="alpha60">
+    <div><%="Your guide to surfing along the seacoast of New Hampshire. Use this site
+    to find up to date forecast conditions for each break and informative posts and insights from local surfers."%>
+    </div>
   </div>
-<% end %>
+</div><br/><br/>
+
+<div className="row">
+  <% @breaks.each do |each_break| %>
+  <div class="small-3 medium-3 large-3 columns">
+    <div class="breaks">
+      <%= link_to each_break.name, each_break, method: :get, class: 'breakslist' %>
+    </div>
+  </div>
+  <% end %>
+</div>
