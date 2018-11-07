@@ -7,9 +7,9 @@ const BreakShow = (props) => {
 
   let beginnerStatus
   if (props.break.beginner_friendly === true) {
-    beginnerStatus = "This is a good spot for surfers of all levels!"
+    beginnerStatus = <div className="easyspot">This is a good spot for surfers of all levels!</div>
   } else {
-      beginnerStatus = "This is an advanced spot. Make sure you're confident with your board, the forecast, and your etiquette before surfing here!"
+      beginnerStatus = <div className="hardspot">This is an advanced spot. Make sure you're confident with your board, the forecast, and your etiquette before surfing here!</div>
     }
 
   let forecastTime = moment(props.forecast.timestamp).format('h:mm a')
@@ -20,7 +20,7 @@ const BreakShow = (props) => {
           <div className="spotlocation">Spot Information</div>
           Beach: {props.break.beach} <br/>
           Address: {props.break.address} <br/>
-          Difficulty: {beginnerStatus}<br/><br/>
+          {beginnerStatus}<br/>
           <BackButton />
         </div>
 

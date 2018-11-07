@@ -192,7 +192,7 @@ class PostsFormContainer extends Component {
           </section>
 
           <div className="button-group">
-            <input className="button" type="submit" value="Submit" />
+            <button className="simplebutton" type="submit" value="Submit">Submit</button>
           </div>
         </div>
     </form>

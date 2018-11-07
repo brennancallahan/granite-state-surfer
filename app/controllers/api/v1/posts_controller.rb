@@ -23,8 +23,6 @@ class Api::V1::PostsController < ApplicationController
       render json: { error: 'You must be logged in to post!' }, status: :unprocessable_entity
     end
 
-    binding.pry
-
     if post.save
       render json: { post: post}, adapter: :json
     else

@@ -1,16 +1,10 @@
-.showpagetitle {
-  display: block;
+.alpha50 {
   text-align: center;
-  border: 2px solid black;
-  margin: 10px;
-  padding: 20px;
-  font-size: 48px;
-  color: white;
-  align-self: center;
-  background-image: url('top_bar.jpeg');
-  background-position: center;
-  font-family: 'Lora', serif;
-  font-stretch: expanded;
+  font-size: 56px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 .maps {
@@ -20,44 +14,51 @@
   text-align: center
 }
 
+.easyspot {
+  color: green;
+  font-weight: bold;
+}
+
+.hardspot {
+  color: red;
+  font-weight: 600;
+  font-style: italic;
+}
+
 .breakshow {
   display: block;
   text-align: left;
-  // border: 3px solid black;
   margin: 5px;
   padding: 5px;
   background-color: white;
-  font-family: 'Lora', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .conditions {
-  // border: 1px solid black;
-  margin: 5px;
+  margin: 3px;
   padding: 5px;
   background-color: white;
-  font-family: 'Lora', serif;
+  font-family: 'Open Sans', sans-serif;
   text-align: left;
 }
 
 .postshow {
   max-height: 500px;
-  // border: 3px solid black;
   margin: 5px;
   padding: 5px;
   background-color: white;
   overflow: scroll;
   align-content: center;
-  font-family: 'Lora', serif;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
 .formshow {
   text-align: left;
-  // border: 3px solid black;
   margin: 5px;
   padding: 5px;
   background-color: white;
-  font-family: 'Lora', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .postquestion {
@@ -65,17 +66,16 @@
   font-weight: bolder;
   padding: 3px;
   text-decoration: underline;
-  font-family: 'Lora', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .spotlocation {
-  // margin: 5px;
   font-size: 24px;
   text-align: center;
   font-weight: bold;
   text-decoration: underline;
   padding-bottom: 5px;
-  font-family: 'Lora', serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .overallrating {
@@ -96,8 +96,7 @@
 .breakname {
   font-size: 28px;
   padding-bottom: 10px;
-  font-family: 'Lora', serif;
-
+  font-family: 'Open Sans', sans-serif;
 }
 
 .column {
@@ -106,9 +105,9 @@
 }
 
 .column.side {
-  width: 60%;
+  width: 50%;
 }
 
 .column.middle {
-  width: 40%
+  width: 50%
 }

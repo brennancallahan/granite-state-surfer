@@ -7,7 +7,7 @@ const PostTile= (props) => {
   let attachmentCatch
 
   if(props.currentUser.id == props.postUserId) {
-    deleteButton = <button onClick={() => props.handlePostDelete(props.id)}>Delete</button>
+    deleteButton = <button onClick={() => props.handlePostDelete(props.id)} className="simplebutton">Delete</button>
   }
 
   if(props.photo_path.url) {
