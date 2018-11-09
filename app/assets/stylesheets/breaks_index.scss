@@ -12,7 +12,7 @@
 .breaks {
   color: white;
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   margin: 30px 30px;
   width: 80%;
@@ -34,13 +34,13 @@ a.breakslist:hover {
 .breaks:hover {
   color: white;
   display: inline-block;
-  font-size: 24px;
+  font-size: 20px;
   text-align: center;
   margin: 30px 30px;
   width: 80%;
   padding: 10px;
   background-color: #042E60;
-  opacity: 1;
+  opacity: .9;
   font-family: 'Open Sans', sans-serif;
   -o-transition:.5s;
   -ms-transition:.5s;

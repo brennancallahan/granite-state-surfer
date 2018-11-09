@@ -76,4 +76,4 @@
   50% { opacity: 1; }
 }
 
-@import "react-alice-carousel/lib/alice-carousel.css";
+@import "node_modules/react-image-gallery/styles/css/image-gallery.css";

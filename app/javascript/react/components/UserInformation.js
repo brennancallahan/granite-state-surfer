@@ -7,6 +7,8 @@ const UserInformation = (props) => {
       <div>
         <div className="large-6 columns">
           <div className="userprofile">
+          <div className="userprofiletitle">Name:</div>
+            {props.first_name} {props.last_name}
             <div className="userprofiletitle">Username:</div>
             {props.username}<br/>
             <div className="userprofiletitle">Email address:</div>
@@ -18,9 +20,9 @@ const UserInformation = (props) => {
 
           <div className="large-6 columns">
             <div className="userpost">
-              <div className="userprofiletitle">Your Posts:</div>
                 <UserPostShow
                   posts={props.posts}
+                  handlePostDelete={props.handlePostDelete}
                 />
             </div>
           </div>

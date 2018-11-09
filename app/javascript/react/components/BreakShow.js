@@ -16,32 +16,38 @@ const BreakShow = (props) => {
 
   return(
     <div>
-        <div className="staticspotdata">
-          <div className="spotlocation">Spot Information</div>
-          Beach: {props.break.beach} <br/>
-          Address: {props.break.address} <br/>
-          {beginnerStatus}<br/>
-          <BackButton />
-        </div>
+      <div className="staticspotdata">
+        <div className="spotlocation">Spot Information</div>
+        Beach: {props.break.beach} <br/>
+        Address: {props.break.address} <br/>
+        {beginnerStatus}
+        <BackButton />
+      </div>
 
-        <div className="conditions">
-          <div className="spotlocation">Current Swell Conditions for {props.break.name}:</div>
-          <div className="overallrating">Overall Rating: {props.forecast.solidRating}/5</div>
+      <div className="spotlocation">Current Swell Conditions for {props.break.name}:</div>
+      <div className="overallrating">Overall Rating: {props.forecast.solidRating}/5</div>
 
-          <div className="waveconditions">
-          Maximum Breaking Wave Height: {props.forecast.maxBreakingHeight} ft.<br/>
-          Minimum Breaking Wave Height: {props.forecast.minBreakingHeight} ft.<br/>
-          </div>
+      <table className="forecasttable">
+        <tr>
+          <td className="sizesmall"><img src='/sea.png' className="icon"/></td>
+          <td className="size">Maximum Breaking Wave Height: {props.forecast.maxBreakingHeight} ft.<br/><br/>Minimum Breaking Wave Height: {props.forecast.minBreakingHeight} ft.</td>
+        </tr>
+        <tr>
+          <td className="sizesmall"><img src='/cloud-with-wind.png' className="icon"/></td>
+          <td className="size">Wind Speed and Direction: {props.forecast.windspeed}mph, {props.forecast.windDirection}</td>
+        </tr>
+        <tr>
+          <td className="sizesmall"><img src='/thermometer.png' className="icon"/></td>
+          <td className="size">Current Air Temperature: {props.forecast.temperature} degrees F</td>
+        </tr>
+      </table>
 
-          <p>Wind Speed and Direction: {props.forecast.windspeed}mph, {props.forecast.windDirection}</p>
-          <p>Current Air Temperature: {props.forecast.temperature} degrees F</p>
-          <div className="charttext">Current Swell Map:</div><img src={props.forecast.swellChart} className="maps"></img><br/>
+        <div className="charttext">Current Swell Map:</div><img src={props.forecast.swellChart} className="maps"></img><br/>
           <div className="charttext">Current Wind Map:</div><img src={props.forecast.windChart} className="maps"></img><br/><br/>
-          <a href="http://magicseaweed.com">
+            <a href="http://magicseaweed.com">
             <img src="https://im-1-uk.msw.ms/msw_powered_by.png"></img>
           </a>
         </div>
-      </div>
   )
 }
 

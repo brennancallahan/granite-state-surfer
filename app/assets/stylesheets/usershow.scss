@@ -1,5 +1,4 @@
 .userprofile {
-    border: 3px solid black;
     margin: 5px;
     padding: 8px;
     background-color: white;
@@ -15,13 +14,25 @@ img {
 }
 
 .userposts {
-  border: 3px solid black;
   margin: 5px;
-  padding: 8px;
+  padding: 12px;
   background-color: white;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .userpost {
-  max-height: 350px;
+  max-height: 550px;
   overflow: scroll
+}
+
+.userpostlink {
+  color: #042E60;
+  text-decoration: underline;
+}
+
+.postquestion {
+  margin: 5px;
+  font-weight: bolder;
+  padding: 3px;
+  font-style: italic;
 }
