@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import GalleryShow from './GalleryShow'
 import Gallery from 'react-photo-gallery'
+import Lightbox from 'react-images';
 
 
 const PhotoShow = (props) => {
@@ -13,17 +14,16 @@ const PhotoShow = (props) => {
   })
   let galleryObjects = imagePaths.map((image) => {
     return ({
-        src: image.url, width: 3, height: 3
+        original: image.url
       })
   })
 
 
   return(
       <div className="photosshow">
-
       </div>
   )
 }
 
 export default PhotoShow
-        // <Gallery photos={galleryObjects} /> line 23
+// <ImageGallery photos={galleryObjects} />

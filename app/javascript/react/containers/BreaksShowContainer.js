@@ -104,7 +104,6 @@ class BreakShowContainer extends Component {
             currentUser={this.state.current_user}
         />
       </div>
-
       <div className = "photoshow">
         <PhotoShow
           photos={this.state.posts}

@@ -9,11 +9,36 @@ class UserContainer extends Component {
       profile_photo: {},
       posts: []
     }
-
+    this.handlePostDelete = this.handlePostDelete.bind(this)
+    this.deletePost = this.deletePost.bind(this)
   }
 
+  handlePostDelete(id){
+    fetch(`/api/v1/users/${this.state.user.id}/posts/${id}`,
+      {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json'},
+          credentials: 'same-origin'
+      }).then((response) => {
+        this.deletePost(id)
+        swal(
+          "Post Removed",
+          "You removed your post from the page.",
+          "info");
+      })
+  }
+
+  deletePost(id){
+    let updatedPosts = this.state.posts.filter((post) => post.id !== id)
+    this.setState({
+      posts: updatedPosts
+    })
+  }
+
+
   componentDidMount() {
-    fetch('/api/v1/users')
+    fetch(`/api/v1/users/${this.state.user.id}`)
     .then(response => {
       if (response.ok) {
         return response;
@@ -39,10 +64,12 @@ class UserContainer extends Component {
             id={this.state.user.id}
             key={this.state.user.id}
             first_name={this.state.user.first_name}
+            last_name={this.state.user.last_name}
             username={this.state.user.username}
             email={this.state.user.email}
             profilePhoto={this.state.profile_photo}
             posts={this.state.posts}
+            handlePostDelete={this.handlePostDelete}
           />
       </div>
     )
