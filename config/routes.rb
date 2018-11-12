@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resources :posts, only: [:index, :show, :create, :new, :destroy]
   end
 
+  resources :buoydatas, only: [:index]
+
   resources :users, only: [:show] do
     resources :posts, only: [:index, :show] do
       resources :breaks, only: [:index, :show]
@@ -19,6 +21,12 @@ Rails.application.routes.draw do
           resources :breaks, only: [:index, :show]
         end
       end
+    end
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :buoydatas, only: [:index]
     end
   end
 

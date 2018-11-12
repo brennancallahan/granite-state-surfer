@@ -3,6 +3,7 @@ import BreakShow from '../components/BreakShow'
 import PostsShow from '../components/PostsShow'
 import PostsFormContainer from './PostsFormContainer'
 import PhotoShow from '../components/PhotoShow'
+import BuoyDataContainer from './BuoyDataContainer'
 
 class BreakShowContainer extends Component {
   constructor(props) {
@@ -85,6 +86,7 @@ class BreakShowContainer extends Component {
               user={this.state.current_user}
               posts={this.state.posts}
         />
+        <BuoyDataContainer />
       </div>
     </div>
 

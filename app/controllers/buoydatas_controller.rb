@@ -1,0 +1,3 @@
+class BuoydatasController < ApplicationController
+
+end
