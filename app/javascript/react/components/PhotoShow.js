@@ -26,4 +26,3 @@ const PhotoShow = (props) => {
 }
 
 export default PhotoShow
-// <ImageGallery photos={galleryObjects} />

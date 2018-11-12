@@ -28,13 +28,11 @@ class BuoyDataContainer extends Component {
         historicalData.push(wave.height)
       })
       this.setState({ waves: historicalData})
-      // console.log(this.state.waves)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
-    console.log(this.state.waves);
     return(
       <div className="chart"><br/>
         <Chart

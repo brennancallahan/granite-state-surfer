@@ -52,6 +52,3 @@ const BreakShow = (props) => {
 }
 
 export default BreakShow
-
-// {posts}
-// <p>Rating with wind taken into account: {props.forecast.fadedRating}/5</p>
