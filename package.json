@@ -10,6 +10,7 @@
     "react-alice-carousel": "^1.12.1",
     "react-dom": "~15.4.2",
     "react-dropzone": "^7.0.1",
+    "react-google-charts": "2",
     "react-image-gallery": "^0.8.12",
     "react-images": "^0.5.19",
     "react-photo-gallery": "^6.2.1",
