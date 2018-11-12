@@ -40,7 +40,7 @@ class BuoyDataContainer extends Component {
         options={{title: "NOAA Station 44098 (Jeffrey's Ledge) - Previous Wave Data (Hourly)", curveType: "none", legend: { position: "top" }}}
         width="100%"
         height="400px"
-        data={[['Time', 'Wave Height, Ft.'],["4 Hours Ago", this.state.waves[6]], ["3.5 Hours Ago", this.state.waves[5]], ["3 Hours Ago", this.state.waves[4]], ["2.5 Hours Ago", this.state.waves[3]], ["2 Hours Ago", this.state.waves[2]], ["1.5 Hours Ago", this.state.waves[1]], ["1 Hours Ago", this.state.waves[6]], [".5 Hours Ago", this.state.waves[0]]]}
+        data={[['Time', 'Wave Height, Ft.'],["4 Hours Ago", this.state.waves[6]], ["3.5 Hours Ago", this.state.waves[5]], ["3 Hours Ago", this.state.waves[4]], ["2.5 Hours Ago", this.state.waves[3]], ["2 Hours Ago", this.state.waves[2]], ["1.5 Hours Ago", this.state.waves[1]], [".5 Hours Ago", this.state.waves[0]]]}
         legend_toggle
         />
       </div>
